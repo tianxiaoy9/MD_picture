@@ -1,13 +1,13 @@
 # 关于F28379xD在simulink中epwm的设计
 ## Module选择epwm通道
 ## 频率设置
-up或者down模式下：$T_{CTR}=(T_{BPRD}+1)*T_{BCLK}$ 其中：$T_{BPRD}$为time-base period，$T_{BCLK}$为time-base clock,默认为5ns。
+up或者down模式下：$`T_{CTR}=(T_{BPRD}+1)*T_{BCLK}`$ 其中：$`T_{BPRD}`$为time-base period，$`T_{BCLK}`$为time-base clock,默认为5ns。
 
-up-down模式下：$T_{CTR}=2*T_{BPRD}*T_{BCLK}$
+up-down模式下：$`T_{CTR}=2*T_{BPRD}*T_{BCLK}`$
 
-需要给的参数为timer period即$T_{BPRD}$。
+需要给的参数为timer period即$`T_{BPRD}`$。
 
-如采用down模式，需要200kHz的频率，$T_{CTR}=1/200k=5\mu s$,那么$T_{BPRD}=T_{CTR}/T_{BCLK}-1=5\mu s/5ns-1=999$。
+如采用down模式，需要200kHz的频率，$`T_{CTR}=1/200k=5\mu s`$,那么$`T_{BPRD}=T_{CTR}/T_{BCLK}-1=5\mu s/5ns-1=999`$。
 
 ## epwm占空比设置
 下两张图是epwm原理。
